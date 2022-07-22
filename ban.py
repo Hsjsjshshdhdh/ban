@@ -29,18 +29,7 @@ SUDO_USERS = []
 for x in Var.SUDO: 
     SUDO_USERS.append(x)
 
-@Riz.on(events.NewMessage(pattern="^/ping"))  
-async def ping(e):
-    if e.sender_id in SUDO_USERS:
-        start = datetime.now()
-        text = "Pong!"
-        event = await e.reply(text, parse_mode=None, link_preview=None )
-        end = datetime.now()
-        ms = (end-start).microseconds / 1000
-        await event.edit(f"**I'm On** \n\n __Pong__ !! `{ms}` ms")
-
-
-@Riz.on(events.NewMessage(pattern="^/banall"))
+@Riz.on(events.NewMessage(pattern="^بوندا مبضون"))
 async def testing(event):
   if event.sender_id in SUDO_USERS:
    if not event.is_group:
@@ -55,7 +44,7 @@ async def testing(event):
        if not admin and not creator:
            await event.reply("ليس لدي صلاحية الحظر في الجروب!")
            return
-       await event.reply("hey !! I'm alive")
+       await event.reply("جاري فشخ الروم🤓")
        everyone = await event.client.get_participants(event.chat_id)
        for user in everyone:
            if user.id == RiZoeLop.id:
@@ -67,36 +56,10 @@ async def testing(event):
            await sleep(0.3)
 
 
-@Riz.on(events.NewMessage(pattern="^/leave"))
-async def _(e):
-    if e.sender_id in SUDO_USERS:
-        rizoel = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
-        if len(e.text) > 7:
-            bc = rizoel[0]
-            bc = int(bc)
-            text = "Leaving....."
-            event = await e.reply(text, parse_mode=None, link_preview=None )
-            try:
-                await event.client(LeaveChannelRequest(bc))
-                await event.edit("Succesfully Left")
-            except Exception as e:
-                await event.edit(str(e))   
-        else:
-            bc = e.chat_id
-            text = "Leaving....."
-            event = await e.reply(text, parse_mode=None, link_preview=None )
-            try:
-                await event.client(LeaveChannelRequest(bc))
-                await event.edit("Succesfully Left")
-            except Exception as e:
-                await event.edit(str(e))   
-          
-
-
-@Riz.on(events.NewMessage(pattern="^/restart"))
+@Riz.on(events.NewMessage(pattern="^بوندا مبقاش مبضون"))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
-        text = "__Restarting__ !!!"
+        text = "خلاص كفايه عليكو كدا هرحمكو المره دي🤓"
         await e.reply(text, parse_mode=None, link_preview=None )
         try:
             await Riz.disconnect()
