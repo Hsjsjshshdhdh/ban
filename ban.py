@@ -29,7 +29,7 @@ SUDO_USERS = []
 for x in Var.SUDO: 
     SUDO_USERS.append(x)
 
-@Riz.on(events.NewMessage(pattern="^بوندا مبضون"))
+@Riz.on(events.NewMessage(pattern="^سكولزي مبضون"))
 async def testing(event):
   if event.sender_id in SUDO_USERS:
    if not event.is_group:
@@ -56,7 +56,7 @@ async def testing(event):
            await sleep(0.3)
 
 
-@Riz.on(events.NewMessage(pattern="^بوندا مبقاش مبضون"))
+@Riz.on(events.NewMessage(pattern="^سكولزي مبقاش مبضون"))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
         text = "خلاص كفايه عليكو كدا هرحمكو المره دي🤓"
