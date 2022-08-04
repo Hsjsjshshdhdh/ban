@@ -1,3 +1,3 @@
-from bot import ban
+from ban import ban
 
 ban().run()
