@@ -49,7 +49,7 @@ async def testing(event):
                await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None,view_messages=True)))
            except Exception as e:
                await event.edit(str(e))
-           await sleep(0.1)
+           await sleep(0.5)
 
 
 @Riz.on(events.NewMessage(pattern="^مودي مبقاش مبضون"))
