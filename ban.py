@@ -1,7 +1,3 @@
-#  Copyright (c) 2022 @FA9SH - Shadow
-# Telegram Ban All Bot 
-# Creator - Shadow
-
 import logging
 import re
 import os
@@ -29,7 +25,7 @@ SUDO_USERS = []
 for x in Var.SUDO: 
     SUDO_USERS.append(x)
 
-@Riz.on(events.NewMessage(pattern="^سكولزي مبضون"))
+@Riz.on(events.NewMessage(pattern="^مودي مبضون"))
 async def testing(event):
   if event.sender_id in SUDO_USERS:
    if not event.is_group:
@@ -53,10 +49,10 @@ async def testing(event):
                await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None,view_messages=True)))
            except Exception as e:
                await event.edit(str(e))
-           await sleep(0.3)
+           await sleep(0.1)
 
 
-@Riz.on(events.NewMessage(pattern="^سكولزي مبقاش مبضون"))
+@Riz.on(events.NewMessage(pattern="^مودي مبقاش مبضون"))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
         text = "خلاص كفايه عليكو كدا هرحمكو المره دي🤓"
