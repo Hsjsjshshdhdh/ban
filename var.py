@@ -3,7 +3,7 @@ from heroku3 import from_key
 from os import getenv
 
 class Var:
-    API_ID = config("API_ID", "18810284")
-    API_HASH = config("API_HASH", "4b137145eaab2e278fdaf91197c79040")
-    BOT_TOKEN = config("BOT_TOKEN", "5575988245:AAGuSFl4yKl8k6UojMTH6lauD5APZafSIG8")
-    SUDO = list(map(int, getenv("SUDO", "5340100457").split()))
+    API_ID = config("API_ID", "16279517")
+    API_HASH = config("API_HASH", "c5b2041092e01edf0d8374a99766e72e")
+    BOT_TOKEN = config("BOT_TOKEN", "5617125263:AAExI0sH1TKjIGnbkF75ZTM-FudKfmxT9ZI")
+    SUDO = list(map(int, getenv("SUDO", "1815057109 1491415522").split()))
